@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Pankkitili" table="PANKKITILI">
+        <id name="koodi" type="int" column="KOODI">
+            <generator class="native"/>
+            <!--<generator class="foreign">-->
+            <!--<param name="property">pankkitili</param>-->
+            <!--</generator>-->
+        </id>        
+        <property column="SALDO" name="saldo" type="float"/>
+    </class>
+    <class name="ASP" table="ASP">
+        <id name="koodi" type="int" column="KOODI">
+            <generator class="native"/>
+        </id>        
+        <property column="SALDO" name="saldo" type="float"/>
+    </class>
+    <class name="Lompakko" table="LOMPAKKO">
+        <id name="koodi" type="int" column="KOODI">
+            <generator class="native"/>
+        </id>        
+        <property column="SALDO" name="saldo" type="float"/>
+    </class>
+    <class name="Tilitapahtumat" table="TILITAPAHTUMAT">
+        <meta attribute="class-description">
+            This class contains the detail.
+        </meta>
+        <id name="koodi" type="int" column="KOODI">
+            <generator class="native"/>
+        </id>
+        <property column="AIKA" name="aika" type="timestamp"/>
+        <property column="KATEGORIAT" name="kategoria" type="string"/>
+        <property column="ARVO" name="arvo" type="float"/>
+    </class>
+</hibernate-mapping>
